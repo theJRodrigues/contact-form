@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { InputEmailElement } from "./inputs/InputEmailElement";
 import { InputTextElement } from "./inputs/InputTextElement";
@@ -15,7 +16,6 @@ export const FormContactUs = () => {
       <InputTextElement label="First Name" id="first-name" setValue={setFName} />
       <InputTextElement label="Second Name" id="second-name" setValue={setSName} />
       </div>
-      
       <InputEmailElement label="Email" id="email" setValue={setEmail}/>
     </form>
     
