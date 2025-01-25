@@ -5,7 +5,7 @@ export const InputTextElement = ({label, id, setValue}) => {
   
   return (
     <label htmlFor={id}>
-      <span>{label}</span>
+      <span>{label} *</span>
       <input type="text" onChange={handleChange} required/>
     </label>
   )

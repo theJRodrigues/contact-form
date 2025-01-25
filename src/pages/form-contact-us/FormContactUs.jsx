@@ -10,11 +10,11 @@ export const FormContactUs = () => {
 
   
   return (
-    <form className="flex flex-col">
-      <h1>Contact Us</h1>
+    <form className="font-Karla flex flex-col">
+      <h1 className="font-bold">Contact Us</h1>
       <div>
       <InputTextElement label="First Name" id="first-name" setValue={setFName} />
-      <InputTextElement label="Second Name" id="second-name" setValue={setSName} />
+      <InputTextElement label="Last Name" id="last-name" setValue={setSName} />
       </div>
       <InputEmailElement label="Email" id="email" setValue={setEmail}/>
     </form>

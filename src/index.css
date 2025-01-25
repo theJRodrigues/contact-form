@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
-@theme {
-    --spacing: 10px;
+@font-face {
+  font-family: Karla;
+  src: url("/public/assets/fonts/Karla/Karla-Regular.ttf");
 }
+
+
+@theme {
+  --spacing: 10px;
+  --font-Karla: Karla, "sans-serif";
+
+  --color-primary-green-200: hsl(148, 38%, 91%);
+  --color-primary-green-600: hsl(169, 82%, 27%);
+  --color-primary-red: hsl(0, 66%, 54%);
+
+  --color-neutral-grey-500:hsl(186, 15%, 59%);
+  --color-neutral-grey-900:hsl(187, 24%, 22%);
+}
+
+
+
+
+
+
+
