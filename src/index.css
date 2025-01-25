@@ -17,7 +17,12 @@
   --color-neutral-grey-500:hsl(186, 15%, 59%);
   --color-neutral-grey-900:hsl(187, 24%, 22%);
 }
-
+.form{
+  @apply font-Karla flex flex-col w-full sm:w-fit p-3 gap-1.5 rounded-2xl bg-white text-neutral-grey-900
+}
+.inputText{
+  @apply py-0.5 px-1.5 w-full rounded border border-neutral-grey-500 focus:outline-none focus:border-primary-green-600
+}
 
 
 

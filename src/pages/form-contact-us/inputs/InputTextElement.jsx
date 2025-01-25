@@ -1,12 +1,16 @@
-export const InputTextElement = ({label, id, setValue}) => {
-  function handleChange(e) {
-    setValue(e.target.value);
-  }
-  
-  return (
+export const InputTextElement = ({label, id, register, errors}) => {
+ return (
     <label htmlFor={id} className="flex flex-col gap-0.5 w-full">
-      <span>{label} *</span>
-      <input className="py-0.5 px-1.5 w-full rounded border border-neutral-grey-500 focus:outline-none focus:border-primary-green-600" type="text" onChange={handleChange}  id={id} required placeholder={"Enter your " + label}/>
+      <h2>{label} *</h2>
+      <input
+      className="inputText"
+      id={id}
+      {...register(id, {
+        required: true,
+        pattern: /^[A-Za-z]+$/i
+      })}/>
+
+      {errors?.[id]?.type === "pattern" && <p className="text-red-500">Teste2</p>}
     </label>
   )
 }

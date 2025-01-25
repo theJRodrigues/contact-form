@@ -11,7 +11,6 @@ export const InputEmailElement = ({label, id, setValue}) => {
         type="email"
         id={id}
         name={id}
-        required
         onChange={handleChange}
         placeholder="Enter your email"
       />
