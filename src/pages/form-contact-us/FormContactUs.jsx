@@ -5,18 +5,19 @@ import { InputTextElement } from "./inputs/InputTextElement";
 import { InputRadioElement } from "./inputs/InputRadioElement";
 import { TextAreaElement } from "./text-area-form/TextAreaElement";
 import { InputCheckBox } from "./inputs/InputCheckBox";
-import { useForm } from "react-hook-form";
+import { useForm} from "react-hook-form";
 
 export const FormContactUs = () => {
-  const {register, handleSubmit, formState: {errors}}= useForm();
-  
+  const {register, handleSubmit, formState: {errors, isValid}, resetField}= useForm();
   function onSubmit(data){
     console.log(data)
+    
   }
+  
 
     
   return (
-    <form className="form" onSubmit={handleSubmit(onSubmit)}>
+    <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
       <h1 className="font-bold text-3xl my-1 ">Contact Us</h1>
 
       <section className="flex gap-2">
@@ -24,9 +25,11 @@ export const FormContactUs = () => {
         <InputTextElement label="Last Name" id="lastName" register={register} errors={errors}/>
       </section>
 
-      {/* <InputEmailElement label="Email Address" id="email" setValue={setEmail}/>
+     
 
-      <section>
+      <InputEmailElement label="Email Address" id="email" register={register} errors={errors}/>
+
+      {/* <section>
         <h2 className="mb-0.5">Query Types</h2>
         <div className="flex gap-2">
           <InputRadioElement label="General Enquiry" id="general-enquiry" setValue={setOption} value={optionRadioBtn}/>
