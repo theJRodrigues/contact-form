@@ -1,12 +1,16 @@
-export const TextAreaElement = ({label, id, setValue}) => {
-    function handleChange(e){
-        setValue(e.target.value)  
-    }
-
+export const TextAreaElement = ({label, name, register, errors}) => {
+  const error = errors?.[name]
   return (
-    <label className='flex flex-col gap-0.5' htmlFor={id}>
+    <label className='flex flex-col gap-0.5'>
         <span>{label}</span>
-        <textarea className="resize-none h-10 rounded px-1.5 py-1 border-[1.5px] border-neutral-grey-500 focus:border-primary-green-600 focus:outline-none " name={id} id={id} onChange={handleChange}></textarea>
+        
+        <textarea className={`textArea
+        border border-neutral-grey-500 focus:border-primary-green-600 
+        ${error && "border-primary-red focus:border-primary-red"}`}
+        name={name} 
+        {...register(name,{required:true})}></textarea>
+
+        {error && <p className="errorMessageForm">This field is required</p>}
     </label>
   )
 }

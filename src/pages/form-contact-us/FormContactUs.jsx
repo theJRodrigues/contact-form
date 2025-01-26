@@ -16,7 +16,7 @@ export const FormContactUs = () => {
     <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
       <h1 className="font-bold text-3xl my-1 ">Contact Us</h1>
 
-      <div className="flex gap-2">
+      <div className="flex flex-col sm:flex-row gap-2">
         <InputTextElement label="First Name" name="firstName" register={register} errors={errors}/>
         <InputTextElement label="Last Name" name="lastName" register={register} errors={errors}/>
       </div>
@@ -25,7 +25,7 @@ export const FormContactUs = () => {
       
       <div>
         <h2 className="mb-0.5">Query Types</h2>
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-col sm:flex-row">
           <InputRadioElement label="General Enquiry" name="queryType" value="generalEnquiry" register={register} watch={watch} errors={errors}/>
           <InputRadioElement label="Support Request" name="queryType" value="supportRequest" register={register} watch={watch} errors={errors}/>
         </div>
@@ -33,13 +33,13 @@ export const FormContactUs = () => {
         && <p className="errorMessageForm">Please select a query type</p>}
       </div>
 
-      {/* <div>
-        <TextAreaElement label="Message *" id="message"  setValue={setMessage}/>
+      <div>
+        <TextAreaElement label="Message *" name="message"  register={register} errors={errors}/>
       </div>
       
       <div className="my-2">
-        <InputCheckBox label="I consent to being contacted by the team" id="checkBox" setValue={setChecked} value={isChecked}/>
-      </div> */}
+        <InputCheckBox label="I consent to being contacted by the team" name="consent" register={register} errors={errors}/>
+      </div>
 
       <button className="w-full bg-primary-green-600 p-1 rounded text-white" type="submit">Enviar</button>
     </form>

@@ -1,16 +1,11 @@
-export const InputCheckBox = ({label, id, setValue, value}) => {
-
-    function handleChange(){
-        if(value){
-            setValue(false);
-            return
-        }
-        setValue(true);
-    }
+export const InputCheckBox = ({label, name, register, errors}) => {
+  const error = errors?.[name]
   return (
-    <label htmlFor={id}>
-        <input className="mr-1 accent-primary-green-600" type="checkbox"  name={id} id={id} onChange={handleChange}/>
+    <label>
+        <input className="mr-1 accent-primary-green-600" type="checkbox" 
+        {...register(name,{required:true})}/>
         <span>{label}</span>
+        {error && <p className="errorMessageForm">To submit this form, please consent to being contacted</p>}
     </label>
   )
 }
