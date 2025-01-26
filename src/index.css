@@ -25,6 +25,10 @@
   @apply py-0.5 px-1.5 w-full rounded focus:outline-none 
 }
 
+.errorMessageForm{
+  @apply text-primary-red text-[13px]
+}
+
 
 
 

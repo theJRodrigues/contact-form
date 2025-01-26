@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
 import { InputEmailElement } from "./inputs/InputEmailElement";
 import { InputTextElement } from "./inputs/InputTextElement";
 import { InputRadioElement } from "./inputs/InputRadioElement";
@@ -8,42 +7,39 @@ import { InputCheckBox } from "./inputs/InputCheckBox";
 import { useForm} from "react-hook-form";
 
 export const FormContactUs = () => {
-  const {register, handleSubmit, formState: {errors, isValid}, resetField}= useForm();
+  const {register, handleSubmit, formState: {errors}, resetField, watch}= useForm();
   function onSubmit(data){
     console.log(data)
-    
   }
   
-
-    
   return (
     <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
       <h1 className="font-bold text-3xl my-1 ">Contact Us</h1>
 
-      <section className="flex gap-2">
-        <InputTextElement label="First Name" id="firstName" register={register} errors={errors}/>
-        <InputTextElement label="Last Name" id="lastName" register={register} errors={errors}/>
-      </section>
+      <div className="flex gap-2">
+        <InputTextElement label="First Name" name="firstName" register={register} errors={errors}/>
+        <InputTextElement label="Last Name" name="lastName" register={register} errors={errors}/>
+      </div>
 
-     
-
-      <InputEmailElement label="Email Address" id="email" register={register} errors={errors}/>
-
-      {/* <section>
+      <InputEmailElement label="Email Address" name="email" register={register} errors={errors}/>
+      
+      <div>
         <h2 className="mb-0.5">Query Types</h2>
         <div className="flex gap-2">
-          <InputRadioElement label="General Enquiry" id="general-enquiry" setValue={setOption} value={optionRadioBtn}/>
-          <InputRadioElement label="Support Request" id="support-request" setValue={setOption} value={optionRadioBtn}/>
+          <InputRadioElement label="General Enquiry" name="queryType" value="generalEnquiry" register={register} watch={watch} errors={errors}/>
+          <InputRadioElement label="Support Request" name="queryType" value="supportRequest" register={register} watch={watch} errors={errors}/>
         </div>
-      </section>
+        {errors?.queryType?.type === "required" 
+        && <p className="errorMessageForm">Please select a query type</p>}
+      </div>
 
-      <section>
+      {/* <div>
         <TextAreaElement label="Message *" id="message"  setValue={setMessage}/>
-      </section>
+      </div>
       
-      <section className="my-2">
+      <div className="my-2">
         <InputCheckBox label="I consent to being contacted by the team" id="checkBox" setValue={setChecked} value={isChecked}/>
-      </section> */}
+      </div> */}
 
       <button className="w-full bg-primary-green-600 p-1 rounded text-white" type="submit">Enviar</button>
     </form>
