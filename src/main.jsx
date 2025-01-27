@@ -6,5 +6,6 @@ import { FormContactUs } from './pages/form-contact-us/FormContactUs.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <FormContactUs />
+    
   </StrictMode>,
 )

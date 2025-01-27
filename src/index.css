@@ -16,6 +16,7 @@
 
   --color-neutral-grey-500:hsl(186, 15%, 59%);
   --color-neutral-grey-900:hsl(187, 24%, 22%);
+
 }
 .form{
   @apply font-Karla flex flex-col w-full sm:w-fit p-3 gap-1.5 rounded-2xl bg-white text-neutral-grey-900
