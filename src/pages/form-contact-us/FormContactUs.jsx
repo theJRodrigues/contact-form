@@ -83,7 +83,7 @@ export const FormContactUs = () => {
           errors={errors}/>
         </div>
 
-        <button className="w-full bg-primary-green-600 p-1 rounded text-white" type="submit">Enviar</button>
+        <button className="w-full bg-primary-green-600 p-1 rounded text-white cursor-pointer hover:bg-green-hover duration-100" type="submit">Submit</button>
       </form>
     </>
   );
