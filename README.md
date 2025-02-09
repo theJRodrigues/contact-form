@@ -1,4 +1,4 @@
-# LANDING PAGE LOOPSTUDIOS - FRONTEND MENTOR
+# Contact Form Us - FRONTEND MENTOR
 Desafio de formulário para aperfeiçoar as habilidades em:
 ### <p style="display: flex; align-item: center;"><img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/react/react-original.svg" width="20px">ReactJs</p>
 Utilizando o <b><img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/vitejs/vitejs-original.svg" width="15px"/> Vite</b> para criação do projeto e a lib <b>React Hook Forms</b> para uma validação dinâmica do formulário, junto com Regex.
